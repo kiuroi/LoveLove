@@ -1,7 +1,13 @@
-document.getElementById('openButton').addEventListener('click', function() {
-    document.getElementById('envelopeFlap').classList.toggle('open');
-    setTimeout(() => {
-        document.querySelector('.envelope-body h2').style.display = 'none';
-        document.querySelector('.envelope-body img').classList.add('show');
-    }, 600); // Tiempo que tarda en abrirse la solapa
+document.addEventListener('DOMContentLoaded', (event) => {
+    const openButton = document.querySelector('.open-button');
+    const closeButton = document.querySelector('.close-button');
+    const envelope = document.querySelector('.envelope');
+
+    openButton.addEventListener('click', () => {
+        envelope.classList.add('open');
+    });
+
+    closeButton.addEventListener('click', () => {
+        envelope.classList.remove('open');
+    });
 });
